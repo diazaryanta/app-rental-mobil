@@ -16,7 +16,7 @@
                             <label>Type Mobil</label>
                             <input type="hidden" name="id_mobil" value="<?php echo $mb->id_mobil ?>">
                             <select name="kode_type" class="form-control">
-                                <option value="<?php echo $mb->kode_type ?>"><?php echo $mb->kode_type ?></option>
+                                <option value="">-- Pilih Type Mobil --</option>
                                 <?php foreach($type as $tp) : ?>
                                     <option value="<?php echo $tp->kode_type ?>">
                                     <?php echo $tp->nama_type ?></option>
