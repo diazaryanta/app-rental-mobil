@@ -11,7 +11,7 @@
 
                     <div class="row">
                         <div class="col-md-5">
-                            <img src="<?php echo base_url().'assets/upload/'.$dt->gambar ?>">
+                            <img class="card-img-top" src="<?php echo base_url().'assets/upload/'.$dt->gambar ?>">
                         </div>
                         <div class="col-md-7">
                             <table class="table">
@@ -21,10 +21,12 @@
                                     <?php 
                                         if ($dt->kode_type == "SDN"){
                                             echo "Sedan";
-                                        }elseif($dt->kdoe_type == "HTB") {
+                                        }elseif($dt->kode_type == "HTB") {
                                             echo "Hatchback";
                                         }elseif($dt->kode_type == "MVP") {
                                             echo "Multi Purpose Vechile";
+                                        }elseif($dt->kode_type == "MNV") {
+                                            echo "Multivan";
                                         }else{
                                             echo "<span class='text-danger'>Type mobil belum terdaftar</span>";
                                         }
