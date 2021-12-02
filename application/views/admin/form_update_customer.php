@@ -4,6 +4,8 @@
             <h1>Data Customer</h1>
         </div>
     </section>
+	
+	<?php foreach ($customer as $cs) : ?>
     <form method="POST" action="<?php echo base_url('admin/data_customer/tambah_customer_aksi') ?>">
 
         <div class="form-group">
@@ -53,4 +55,5 @@
         <button type="submit" class="btn btn-sm btn-primary" >Submit</button>
         <button type="reset" class="btn btn-sm btn-danger" >Reset</button>
     </form>
+	<?php endforeach; ?>
 </div>
