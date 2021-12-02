@@ -6,7 +6,7 @@ class Data_customer extends CI_Controller{
         $data['customer'] = $this->rental_model->get_data('customer')->result();
         $this->load->view('templates_admin/header');
         $this->load->view('templates_admin/sidebar');
-        $this->load->view('admin/data_customer',$data);
+        $this->load->view('admin/data_customer');
         $this->load->view('templates_admin/footer');
     }
 
@@ -52,6 +52,16 @@ class Data_customer extends CI_Controller{
                         </div>');
             redirect('admin/data_customer');
         }
+    }
+
+    public function update_customer($id)
+    {
+        $where = array('id_customer' => $id);
+        $data['customer'] = $this->db->query("SELECT * FROM customer WHERE id_customer = '$id'")->result();
+        $this->load->view('templates_admin/header');
+        $this->load->view('templates_admin/sidebar');
+        $this->load->view('admin/form_update_customer',$data);
+        $this->load->view('templates_admin/footer');
     }
 
     public function _rules()
