@@ -24,6 +24,12 @@
                             <th>Tahun Produksi</th>
                             <td><?php echo $dt->tahun ?></td>
                         </tr>
+
+                        <tr>
+                            <th>Denda</th>
+                            <td>Rp. <?php echo number_format($dt->denda,0,',','.')  ?></td>
+                        </tr>
+
                         <tr>
                             <th>Status</th>
                             <td>

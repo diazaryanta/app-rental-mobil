@@ -55,6 +55,16 @@
                                 </tr>
 
                                 <tr>
+                                    <td>Harga</td>
+                                    <td>Rp. <?php echo number_format($dt->harga,0,',','.')  ?></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Denda</td>
+                                    <td>Rp. <?php echo number_format($dt->denda,0,',','.')  ?></td>
+                                </tr>
+
+                                <tr>
                                     <td>Status</td>
                                     <td>
                                         <?php

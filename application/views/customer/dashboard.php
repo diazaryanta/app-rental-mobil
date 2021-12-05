@@ -24,6 +24,13 @@
                             Cart
                             <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
                         </button>
+                        <a class="nav-link" href="<?php echo base_url('register') ?>">Register</a>
+                        <?php if ($this->session->userdata('nama')) { ?>
+                            <a class="nav-link" href="<?php echo base_url('auth/logout')  ?>">Welcome <?php echo $this->session->userdata('nama')  ?><span class="btn btn-sm btn-warning">Logout</span></a>
+                            <a class="nav-link" href="<?php echo base_url('auth/ganti_password')  ?>"><span class="btn btn-sm btn-primary">Ganti password</span></a>
+                        <?php } else { ?>
+                            <a class="nav-link" href="<?php echo base_url('auth/login')  ?>"><span class="btn btn-sm btn-success">Login</span></a>
+                        <?php } ?>
                     </form>
                 </div>
             </div>
@@ -56,6 +63,7 @@
                                             <?php echo $mb->merk ?></h4>
                                         <!-- Product price-->
                                         <h6>No. Plat : <?php echo $mb->no_plat ?></h6>
+                                        <h5>Rp. <?php echo number_format($mb->harga,0,',','.') ?> / Hari</h5>
                                     </div>
                                 </div>
                                 <div class="text-center card-footer p-2">
