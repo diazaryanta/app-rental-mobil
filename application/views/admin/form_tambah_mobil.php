@@ -43,6 +43,20 @@
                             <?php echo form_error('warna','<div class="text-small
                             text-danger">','</div>') ?>
                         </div>
+
+                        <div class="form-group">
+                            <label>Harga Sewa per Hari</label>
+                            <input type="number" name="harga" class="form-control">
+                            <?php echo form_error('harga','<div class="text-small
+                            text-danger">','</div>') ?>
+                        </div> 
+
+                        <div class="form-group">
+                            <label>Denda</label>
+                            <input type="number" name="denda" class="form-control">
+                            <?php echo form_error('denda','<div class="text-small
+                            text-danger">','</div>') ?>
+                        </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">

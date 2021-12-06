@@ -33,6 +33,8 @@ class Data_mobil extends CI_Controller{
             $warna                  = $this->input->post('warna');
             $tahun                  = $this->input->post('tahun');
             $status                 = $this->input->post('status');
+            $harga                  = $this->input->post('harga');
+            $denda                  = $this->input->post('denda');
             $gambar                 = $_FILES['gambar']['name'];
             if($gambar=''){}else{
                 $config ['upload_path']      = './assets/upload';
@@ -53,6 +55,8 @@ class Data_mobil extends CI_Controller{
                 'tahun'             => $tahun,
                 'warna'             => $warna,
                 'status'            => $status,
+                'harga'             => $harga,
+                'denda'             => $denda,
                 'gambar'            => $gambar,
             );
 
@@ -93,6 +97,8 @@ class Data_mobil extends CI_Controller{
             $warna                  = $this->input->post('warna');
             $tahun                  = $this->input->post('tahun');
             $status                 = $this->input->post('status');
+            $harga                  = $this->input->post('harga');
+            $denda                  = $this->input->post('denda');
             $gambar                 = $_FILES['gambar']['name'];
             if($gambar){
                 $config ['upload_path']      = './assets/upload';
@@ -115,6 +121,8 @@ class Data_mobil extends CI_Controller{
                 'tahun'             => $tahun,
                 'warna'             => $warna,
                 'status'            => $status,
+                'harga'             => $harga,
+                'denda'             => $denda,
             );
 
             $where = array(
@@ -139,6 +147,8 @@ class Data_mobil extends CI_Controller{
         $this->form_validation->set_rules('warna','Warna','required');
         $this->form_validation->set_rules('tahun','Tahun','required');
         $this->form_validation->set_rules('status','Status','required');
+        $this->form_validation->set_rules('harga','Harga','required');
+        $this->form_validation->set_rules('denda','Denda','required');
     }
     
     public function detail_mobil($id)
