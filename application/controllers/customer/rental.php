@@ -21,15 +21,16 @@ class Rental extends CI_Controller
     
 
         $data = array (
-            'id_customer'      =>  $id_customer,
-            'id_mobil'         =>  $id_mobil,
-            'tanggal_rental'   =>  $tanggal_rental,
-            'tanggal_kembali'  =>  $tanggal_kembali,
-            'denda'            =>  $denda,
-            'harga'            =>  $harga,
+            'id_customer'          =>  $id_customer,
+            'id_mobil'             =>  $id_mobil,
+            'tanggal_rental'       =>  $tanggal_rental,
+            'tanggal_kembali'      =>  $tanggal_kembali,
+            'denda'                =>  $denda,
+            'harga'                =>  $harga,
             'tanggal_pengembalian' => '-',
-            'status_pengembalian' => 'Belum Selesai',
-            'status_rental' => 'Belum kembali',
+            'status_rental'        => 'Belum Selesai',
+            'status_pengembalian'  => 'Belum kembali',
+            'total_denda'          => '0' 
         );
         $this->rental_model->insert_data($data,'transaksi');
 

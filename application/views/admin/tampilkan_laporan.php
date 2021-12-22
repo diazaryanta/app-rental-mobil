@@ -1,10 +1,31 @@
 <div class="main-content">
     <section class="section">
         <div class="section-header">
-            <h1>Data Transaksi</h1>
+            <h1>Filter Laporan Transaksi</h1>
         </div>
+    </section>
 
-        <div class="table-responsive">
+    <form method="POST" action="<?php echo base_url('admin/Laporan') ?>">
+    <div class="form-group">
+        <label>Dari tanggal</label>
+        <input type="date" name="dari" class="form-control">
+        <?php echo form_error('dari','<span class="text-small text-danger">','</span>') ?>
+    </div>
+
+    <div class="form-group">
+        <label>Sampai tanggal</label>
+        <input type="date" name="sampai" class="form-control">
+        <?php echo form_error('sampai','<span class="text-small text-danger">','</span>') ?>
+    </div>
+
+    <button type="submit" class="btn btn-sm btn-primary"><i class="fas fa-eye"></i>Tampikan Data</button>
+    </form><hr>
+
+    <div class="btn-group">
+        <a class="btn btn-sm btn-success" target="_blank" href="<?php echo base_url().'admin/laporan/print_laporan/?dari='.set_value('dari').'&sampai='.set_value('sampai') ?>"><i class="fas fa-print"></i> Print</a>
+    </div>
+
+    <div class="table-responsive mt-3">
         <table class="table table-bordered table-striped">
         <tr>
             <th>No</th>
@@ -18,12 +39,10 @@
             <th>Tgl. Dikembalikan</th>
             <th>Status Pengembalian</th>
             <th>Status Rental</th>
-            <th colspan="2">Cek Pembayaran </th>
-            <th colspan="2">Action</th>
         </tr>
 
         <?php $no=1;
-        foreach($transaksi as $tr) : ?>
+        foreach($laporan as $tr) : ?>
         <tr>
             <td><?php echo $no++?></td>
             <td><?php echo $tr->nama ?></td>
@@ -46,34 +65,8 @@
             <td><?php echo $tr->status_pengembalian ?></td>
             <td><?php echo $tr->status_rental ?></td>
             <td>
-
-            <td>
-                    <?php
-                    if(empty($tr->bukti_pembayaran)) { ?>
-                        <button class="btn btn-sm btn-danger"><i class="fas fa-times-circle"></i></button>
-                        <?php }else{ ?>
-                            <a class="btn btn-sm btn-primary" href="<?php echo base_url('admin/transaksi/pembayaran/' .$tr->id_rental) ?>">
-                            <i class="fas fa-check-circle"></i></a>
-                            <?php } ?>
-                </center>
-            </td>
-            <td>
-                <?php
-                if($tr->status == "1"){
-                    echo "-";
-                }else {?>
-                    <div class="row">
-                        <a class="btn btn-sm btn-success mr-2" href="<?php echo
-                            base_url('admin/transaksi/transaksi_selesai/' .$tr->id_rental) ?>"><i class="fas fa-check"></i></a>
-                         <a onclick="return confirm('Yakin Batal?')" class="btn btn-sm btn-danger" href="<?php echo
-                            base_url('admin/transaksi/batal_transaksi/' .$tr->id_rental) ?>"><i class="fas fa-times"></i></a>
-                    </div>
-                <?php } ?>
-            </td>
         </tr>
         <?php endforeach; ?>
         </table>
         </div>
-    </section>
-</div>
-
+</div>        
