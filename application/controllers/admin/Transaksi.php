@@ -62,22 +62,22 @@ class Transaksi extends CI_Controller{
         $id                      =$this->input->post('id_rental');
         $tanggal_pengembalian    =$this->input->post('tanggal_pengembalian');
         $status_rental           =$this->input->post('status_rental');
-        $status_pengembalian    =$this->input->post('status_pengembalian');
-        $tanggal_kembali    =$this->input->post('tanggal_kembali');
-        $denda    =$this->input->post('denda');
+        $status_pengembalian     =$this->input->post('status_pengembalian');
+        $tanggal_kembali         =$this->input->post('tanggal_kembali');
+        $denda                   =$this->input->post('denda');
 
-        $x          =strtotime($tanggal_pengembalian);
-        $y          =strtotime($tanggal_kembali);
-        $selisih          =abs($x - $y)/(60*60*24);
-        $total_denda    =$selisih * $denda;
+        $x                       =strtotime($tanggal_pengembalian);
+        $y                       =strtotime($tanggal_kembali);
+        $selisih                 =abs($x - $y)/(60*60*24);
+        $total_denda             =$selisih * $denda;
 
 
 
         $data = array(
             'tanggal_pengembalian'  =>$tanggal_pengembalian,
             'status_rental'         =>$status_rental,
-            'status_pengembalian'  =>$status_pengembalian,
-            'total_denda'  =>$total_denda
+            'status_pengembalian'   =>$status_pengembalian,
+            'total_denda'           =>$total_denda
         );
 
         $where = array(
@@ -92,6 +92,23 @@ class Transaksi extends CI_Controller{
             </div>');
 redirect('admin/transaksi');
     }
+public function batal_transaksi($id)
+{
+  $where = array('id_rental' => $id);
+  $data  = $this->rental_model->get_where($where, 'transaksi')->row();
+
+  $where2 = array('id_mobil' => $data->id_mobil);
+  $data2  = array('status'   => '1');
+
+  $this->rental_model->update_data('mobil', $data2,$where2);
+  $this->rental_model->delete_data($where, 'transaksi');
+  $this->session->set_flashdata('pesan','<div class="alert alert-success alert-dismissible fade show" role="alert">
+            Transaksi Berhasil Dibatalkan!
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span></buttom>
+            </div>');
+  redirect('admin/transaksi');
+}
 }
 
 ?>

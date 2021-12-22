@@ -21,8 +21,8 @@
     <label>Status Pengembalian</label>
     <select name="status_pengembalian" class="form-control">
         <option value="<?php echo $tr->status_pengembalian ?>"><?php echo $tr->status_pengembalian ?></option>
-        <option value="Selesai">Selesai</option>
-        <option value="Belum Selesai">Belum Selesai</option>
+        <option value="Kembali">Kembali</option>
+        <option value="Belum Kembali">Belum Kembali</option>
         
     </select>
 </div>
@@ -31,8 +31,8 @@
     <label>Status Rental</label>
     <select name="status_rental" class="form-control">
         <option value="<?php echo $tr->status_rental ?>"><?php echo $tr->status_rental ?></option>
-        <option value="Kembali">Kembali</option>
-        <option value="Belum Kembali">Belum Kembali</option>
+        <option value="Selesai">Selesai</option>
+        <option value="Belum Selesai">Belum Selesai</option>
         
     </select>
 </div>
