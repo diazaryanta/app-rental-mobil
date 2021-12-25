@@ -9,7 +9,7 @@ class Transaksi extends CI_Controller{
         AND tr.id_customer=cs.id_customer AND cs.id_customer='$customer' ORDER BY id_rental DESC")->result();
           $this->load->view('templates_customer/header');
           $this->load->view('customer/transaksi', $data);
-          $this->load->view('templates_customer/footer');
+    
 }
 
 

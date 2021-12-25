@@ -1,5 +1,6 @@
+
 <div class="container">
-    <div class="card mx-auto" style="marin-top: 180px; width: 80%">
+    <div class="card mx-auto" style="margin-top: 60px; width: 80%">
     <div class="card-header">
         Data Transaksi Anda
     </div>
@@ -51,6 +52,7 @@
 </div>
 
 
+
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -68,4 +70,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>

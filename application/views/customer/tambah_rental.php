@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="card" style="margin-top: 200px">
+    <div class="card" style="margin-top: 50px; margin-bottom:30px;">
     <div class="card-header">
         Form Rental Mobil
     </div>
@@ -24,8 +24,9 @@
                 <label>Tanggal Kembali</label>
                 <input type="date" name="tanggal_kembali" class="form-control">
             </div>
-            <button type="submit" class="btn btn-warning">Rental</button>
+            <button type="submit" class="btn btn-warning mt-3">Rental</button>
             </form>
         <?php endforeach; ?>
     </div>
+</div>
 </div>
