@@ -25,8 +25,9 @@
                 </ul>
                 <div class="text-end">
                 <?php if ($this->session->userdata('nama')) { ?>
-                <a class="nav-link" href="<?php echo base_url('auth/logout')  ?>">Welcome <?php echo $this->session->userdata('nama')  ?><span class="btn btn-sm btn-warning">Logout</span></a>
-                <a class="nav-link" href="<?php echo base_url('auth/ganti_password')  ?>"><span class="btn btn-sm btn-primary">Ganti password</span></a>
+                  Welcome <?php echo $this->session->userdata('nama')  ?>
+                  <button type="button" class="btn bg-danger"><a href="<?php echo base_url('auth/logout')  ?>"style="text-decoration: none; color: white;">Logout</a></button>
+                <button type="button" class="btn " style="background-color: #27C499; color: white; text-decoration:none;"> <a href="<?php echo base_url('auth/ganti_password')  ?>" style="text-decoration: none; color:white;">Ganti Password</a></button>
                 <?php } else { ?>
                 <button type="button" class="btn btn-outline-light me-2"><a href="<?php echo base_url('auth/login')  ?>" style="text-decoration: none; color: white;">Login</a></button>
                 <button type="button" class="btn " style="background-color: #27C499; color: white; text-decoration:none;"> <a href="<?php echo base_url('register') ?>" style="text-decoration: none; color:white;">Register</a></button>

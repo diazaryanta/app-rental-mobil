@@ -1,6 +1,6 @@
-
-<div class="container">
-    <div class="card mx-auto" style="margin-top: 60px; width: 80%">
+<section class="py-5">
+<div class="container mb-5">
+    <div class="card mx-auto" style="margin-top: 50px; width: 80%">
     <div class="card-header">
         Data Transaksi Anda
     </div>
@@ -50,6 +50,8 @@
     </div>
     </div>
 </div>
+</section>
+
 
 
 
@@ -72,3 +74,4 @@
   </div>
 </div>
 </div>
+

@@ -9,10 +9,10 @@
     </head>
 
 
-<div class="container mt-5 mb-5">
+<div class="container mb-5">
     <div class="row">
         <div class="col-md-8">
-            <div class="card" style="margin-top:180px;">
+            <div class="card" style="margin-top:100px;">
                 <div class="card-header">
                     Invoice Pembayaran Anda
                 </div>
@@ -70,7 +70,7 @@
             </div>
         </div>
         <div class="col-md-4">
-            <div class="card" style="margin-top:180px;">
+            <div class="card" style="margin-top:100px;">
             <div class="card-header alert alert-primary">
                 Informasi Pembayaran
             </div>
